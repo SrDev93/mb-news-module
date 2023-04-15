@@ -20,7 +20,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->brand_id) {
+        if (\request()->session()->has('brand_id')){
+            $items = News::where('brand_id', \request()->session()->get('brand_id'))->get();
+        }elseif (Auth::user()->brand_id) {
             $items = News::where('brand_id', Auth::user()->brand_id)->get();
         }else {
             $items = News::all();
@@ -35,7 +37,10 @@ class NewsController extends Controller
      */
     public function create()
     {
-        if (Auth::user()->brand_id) {
+        if (\request()->session()->has('brand_id')){
+            $categories = NewsCategory::where('brand_id', \request()->session()->get('brand_id'))->get();
+            $tags = Tag::where('brand_id', \request()->session()->get('brand_id'))->get();
+        }elseif (Auth::user()->brand_id) {
             $categories = NewsCategory::where('brand_id', Auth::user()->brand_id)->get();
             $tags = Tag::where('brand_id', Auth::user()->brand_id)->get();
         }else {
@@ -105,7 +110,10 @@ class NewsController extends Controller
      */
     public function edit(News $News)
     {
-        if (Auth::user()->brand_id) {
+        if (\request()->session()->has('brand_id')){
+            $categories = NewsCategory::where('brand_id', \request()->session()->get('brand_id'))->get();
+            $tags = Tag::where('brand_id', \request()->session()->get('brand_id'))->get();
+        }elseif (Auth::user()->brand_id) {
             $categories = NewsCategory::where('brand_id', Auth::user()->brand_id)->get();
             $tags = Tag::where('brand_id', Auth::user()->brand_id)->get();
         }else {

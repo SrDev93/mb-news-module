@@ -22,6 +22,11 @@
                                 <input type="text" name="name" class="form-control" id="name" required value="{{ $NewsCategory->name }}">
                                 <div class="invalid-feedback">لطفا نام دسته بندی را وارد کنید</div>
                             </div>
+                            <div class="col-md-12">
+                                <label for="slug" class="form-label">نامک</label>
+                                <input type="text" name="slug" class="form-control" id="slug" required value="{{ $NewsCategory->slug }}">
+                                <div class="invalid-feedback">لطفا نامک را وارد کنید</div>
+                            </div>
                             <div class="col-md-11">
                                 <label for="banner" class="form-label">بنر (228 * 1920)</label>
                                 <input type="file" name="banner" class="form-control" id="banner" accept="image/*">

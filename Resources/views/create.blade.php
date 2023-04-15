@@ -49,11 +49,11 @@
                                 <input type="text" name="title" class="form-control" id="title" required value="{{ old('title') }}">
                                 <div class="invalid-feedback">لطفا عنوان را وارد کنید</div>
                             </div>
-{{--                            <div class="col-md-6">--}}
-{{--                                <label for="slug" class="form-label">نامک</label>--}}
-{{--                                <input type="text" name="slug" class="form-control" id="slug" required value="{{ old('slug') }}">--}}
-{{--                                <div class="invalid-feedback">لطفا نامک را وارد کنید</div>--}}
-{{--                            </div>--}}
+                            <div class="col-md-12">
+                                <label for="slug" class="form-label">نامک</label>
+                                <input type="text" name="slug" class="form-control" id="slug" required value="{{ old('slug') }}">
+                                <div class="invalid-feedback">لطفا نامک را وارد کنید</div>
+                            </div>
                             <div class="col-md-12">
                                 <label for="short_text" class="form-label">توضیح کوتاه</label>
                                 <input type="text" name="short_text" class="form-control" id="short_text" value="{{ old('short_text') }}" required>

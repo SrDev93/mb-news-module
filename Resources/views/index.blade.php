@@ -27,6 +27,7 @@
                                     @endif
                                     <th class="wd-15p border-bottom-0">دسته بندی</th>
                                     <th class="wd-15p border-bottom-0">عنوان</th>
+                                    <th class="wd-15p border-bottom-0">بازدید</th>
                                     <th class="wd-20p border-bottom-0">عملیات</th>
                                 </tr>
                                 </thead>
@@ -39,6 +40,7 @@
                                         @endif
                                         <td>@if($item->category) {{ $item->category->name }} @endif</td>
                                         <td>{{ $item->title }}</td>
+                                        <td>{{ count($item->visits) }}</td>
                                         <td>
                                             <a href="{{ route('News.edit', $item->id) }}" class="btn btn-primary fs-14 text-white edit-icn" title="ویرایش">
                                                 <i class="fe fe-edit"></i>

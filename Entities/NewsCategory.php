@@ -13,7 +13,7 @@ use Modules\Blogs\Entities\BlogCategory;
 class NewsCategory extends Model
 {
     use HasFactory;
-    use Sluggable;
+//    use Sluggable;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
@@ -46,12 +46,12 @@ class NewsCategory extends Model
         return \Modules\News\Database\factories\NewsCategoryFactory::new();
     }
 
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'name'
-            ]
-        ];
-    }
+//    public function sluggable(): array
+//    {
+//        return [
+//            'slug' => [
+//                'source' => 'name'
+//            ]
+//        ];
+//    }
 }

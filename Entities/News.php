@@ -14,7 +14,7 @@ use Modules\Base\Entities\Visit;
 class News extends Model
 {
     use HasFactory;
-    use Sluggable;
+//    use Sluggable;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
@@ -56,12 +56,12 @@ class News extends Model
         return \Modules\News\Database\factories\NewsFactory::new();
     }
 
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
-    }
+//    public function sluggable(): array
+//    {
+//        return [
+//            'slug' => [
+//                'source' => 'title'
+//            ]
+//        ];
+//    }
 }
